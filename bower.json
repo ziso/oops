@@ -1,0 +1,28 @@
+{
+  "name": "oops",
+  "version": "0.0.1",
+  "description": "An example application for creating an end user portal for HP's Operation Orchestration, using Polymer and accessing OO's rest api's",
+  "main": "src/index.html",
+  "authors": [
+    "Matan Zruya",
+	"Omri Zisovitch",
+	"Doron Sharon"
+  ],
+  "license": "MIT",
+  "homepage": "http://github.com/ziso/oops",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "core-elements": "Polymer/core-elements#~0.3.3",
+    "polymer": "Polymer/polymer#~0.3.3",
+    "paper-elements": "Polymer/paper-elements#~0.3.3",
+    "core-animation": "Polymer/core-animation#~0.3.3",
+    "core-animated-pages": "Polymer/core-animated-pages#~0.3.3"
+  }
+}
