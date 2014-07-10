@@ -1,0 +1,27 @@
+[
+    {
+        "name"     : "input1",
+        "type"     : "text",
+        "mandatory": true
+    },
+    {
+        "name"     : "input2",
+        "type"     : "text",
+        "mandatory": false
+    },
+    {
+        "name"     : "input3",
+        "type"     : "text",
+        "mandatory": true
+    },
+    {
+        "name"     : "input4",
+        "type"     : "text",
+        "mandatory": false
+    },
+    {
+        "name"     : "input5",
+        "type"     : "text",
+        "mandatory": false
+    }
+]

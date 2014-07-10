@@ -1,0 +1,8 @@
+{
+    "id"         : "d012e1c3-704f-426f-a380-b2425a166d39",
+    "name"       : "How do I- Create a parallel flows",
+    "path"       : "Library/How Do I flows/How do I- Create a parallel flow.xml",
+    "description": "The “How do I: Create a parallel flow” flow demonstrates how to use a parallel split step. \n\n<pre>\nThis flow was created using the following OO operations:\n- “Random Number Generator” from the Library/Utility Operations folder\n- “Get Current Date and Time” from the  Library/Utility Operations/Date and Time folder\n- “Display Message” from the Library/Utility Operations folder\n\nThe flow contains the following steps:\n\n1. The parallel split step starts, running the two lanes simultaneously.     \n\n2. The “Generate Random Number”  step generates a random number.\n     Input: \"max\"\n     Gets value from:  constant value “100”\n\n     Input: \"min\"\n     Gets value from:  constant value “1”\n \n     Places result in: flow variable \"randomNumber\" \n\n3. The “Get Current Date and Time” step captures the current date and time.\n     Places result in:   flow variable  “dateTime”\n\n4. The “Display Message” step displays a message to the user.\n     Input:  message\n     Gets value from:  constant  \n         \" Parallel split step completed. \n         The current date/time is ${dateTime}.  \n          A random number: ${randomNumber}.\"\n   \n   Places result in: default flow variable \"message\"\n</pre>",
+    "cpName"     : "HPOO-oo-base",
+    "version"    : "1.2-SNAPSHOT"
+}
