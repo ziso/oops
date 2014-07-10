@@ -6,13 +6,18 @@ var liveReload = require('gulp-livereload');
 var img64 = require('gulp-img64');
 var cssBase64 = require('gulp-css-base64');
 var argv = require('yargs').argv;
+var logger = require('morgan');
 
 // http server configuration
 // =========================
 var serverPort = argv.port || 5000;
 var server = express();
 function startExpress() {
-	server.use(express.static('./'));
+	server.use('/', express.static('./src'));
+	server.use('/bower_components', express.static('./bower_components'));
+	server.use('/server', express.static('./server'));
+	server.use('/resources', express.static('./resources'));
+	server.use(logger());
 	var oopsMockServer = require('./server/server');
 	oopsMockServer.listen(server);
 }
