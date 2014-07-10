@@ -12,13 +12,22 @@ var argv = require('yargs').argv;
 var serverPort = argv.port || 5000;
 var server = express();
 function startExpress() {
-	server.use(express.static('./src'));
+	server.use(express.static('./'));
 	var oopsMockServer = require('./server/server');
 	oopsMockServer.listen(server);
 }
 
+// live reload configuration
+// =========================
+var lrPort = argv.lrport || 35729;
+function startLivereload() {
+  var lr = require('tiny-lr')();
+  lr.listen(lrPort);
+}
+
 gulp.task('start', function () {
 	startExpress();
+	startLivereload();
 });
 
 // live reload support
