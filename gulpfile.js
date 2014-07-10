@@ -9,10 +9,9 @@ var argv = require('yargs').argv;
 
 // http server configuration
 // =========================
-var serverPort = 5000;
+var serverPort = argv.port || 5000;
 var server = express();
 function startExpress() {
-console.log(yargs.argv.port);
 	server.use(express.static('./src'));
 	var oopsMockServer = require('./server/server');
 	oopsMockServer.listen(server);
@@ -26,6 +25,9 @@ gulp.task('start', function () {
 // ===================
 gulp.task('serve', function () {
     server.listen(serverPort);
+	console.log('=============================');
+	console.log('Server started on port: ' + serverPort);
+	console.log('=============================');
 });
 
 gulp.task('json', function () {
