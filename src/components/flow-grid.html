@@ -1,0 +1,40 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/polymer-grid-layout/polymer-grid-layout.html">
+<link rel="import" href="../../bower_components/polymer-layout/polymer-layout.html">
+<link rel="import" href="../../bower_components/core-animated-pages/core-animated-pages.html">
+<link rel="import" href="../../bower_components/core-animation/core-animation.html">
+
+<polymer-element name="flow-grid" attributes="flowId">
+	<template>
+		<style>
+			heading {
+				background-color: lightgreen;
+				border: 5px solid orange;
+			}
+			main {
+				background-color: pink;
+				border: 5px solid brown;
+			}
+			panel {
+				background-color: yellow;
+				border: 5px solid blue;
+			}
+		</style>
+		<polymer-grid-layout id="gridLayout"  layout="{{layout}}"></polymer-grid-layout>          
+		<heading>Heading One</heading>
+		<panel flex></panel>
+		<main>Main Content</main>
+	</template>
+	 <script>
+		Polymer('flow-grid', {
+			ready: function() {
+				this.layout=
+				[
+					[1, 1, 1],
+					[2, 2, 2],
+					[3, 3, 3]
+				];
+			}
+		})
+	 </script>
+</polymer-element>

@@ -1,28 +1,29 @@
 {
-  "name": "oops",
-  "version": "0.0.1",
-  "description": "An example application for creating an end user portal for HP's Operation Orchestration, using Polymer and accessing OO's rest api's",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ziso/oops"
-  },
-  "authors": [
-    "Matan Zruya",
-    "Omri Zisovitch",
-    "Doron Sharon"
-  ],
-  "license": "MIT",
-  "readmeFilename": "README.md",
-  "devDependencies": {
-    "express": "^4.5.1",
-    "gulp": "^3.8.6",
-    "gulp-bower": "0.0.6",
-    "gulp-css-base64": "^1.2.3",
-    "gulp-img64": "0.0.6",
-    "gulp-livereload": "^2.1.0",
-    "gulp-vulcanize": "^0.2.0",
-	"yargs": "^1.2.6",
-	"tiny-lr": "^0.0.9",
-	"morgan": "^1.1.1"
-  }
+    "name" : "oops",
+    "version" : "0.0.1",
+    "description" : "An example application for creating an end user portal for HP's Operation Orchestration, using Polymer and accessing OO's rest api's",
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/ziso/oops"
+    },
+    "authors" : [
+        "Matan Zruya",
+        "Omri Zisovitch",
+        "Doron Sharon"
+    ],
+    "license" : "MIT",
+    "readmeFilename" : "README.md",
+    "devDependencies" : {
+        "express" : "^4.5.1",
+        "gulp" : "^3.8.6",
+        "gulp-bower" : "0.0.6",
+        "gulp-css-base64" : "^1.2.3",
+        "gulp-img64" : "0.0.6",
+        "gulp-livereload" : "^2.1.0",
+        "gulp-vulcanize" : "^0.2.0",
+        "yargs" : "^1.2.6",
+        "tiny-lr" : "^0.0.9",
+        "morgan" : "^1.1.1",
+        "connect-livereload" : "0.4.0"
+    }
 }

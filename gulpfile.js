@@ -7,12 +7,14 @@ var img64 = require('gulp-img64');
 var cssBase64 = require('gulp-css-base64');
 var argv = require('yargs').argv;
 var logger = require('morgan');
+var lr = require('tiny-lr')();
 
 // http server configuration
 // =========================
 var serverPort = argv.port || 5000;
 var server = express();
 function startExpress() {
+    server.use(require('connect-livereload')());
 	server.use('/', express.static('./src'));
 	server.use('/bower_components', express.static('./bower_components'));
 	server.use('/server', express.static('./server'));
@@ -26,7 +28,6 @@ function startExpress() {
 // =========================
 var lrPort = argv.lrport || 35729;
 function startLivereload() {
-  var lr = require('tiny-lr')();
   lr.listen(lrPort);
 }
 
@@ -45,13 +46,19 @@ gulp.task('serve', function () {
 });
 
 gulp.task('json', function () {
-    gulp.src('./server/mocks/*.json')
-        .pipe(liveReload());
+    lr.changed({
+        body: {
+            files: ['./server/mocks/*.json']
+        }
+    });
 });
 
 gulp.task('html', function () {
-    gulp.src('./src/**')
-        .pipe(liveReload());
+    lr.changed({
+        body: {
+            files: ['./src/**']
+        }
+    });
 });
 
 gulp.task('watch', function () {
