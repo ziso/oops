@@ -3,6 +3,7 @@
 <link rel="import" href="../../bower_components/polymer-layout/polymer-layout.html">
 <link rel="import" href="../../bower_components/core-animated-pages/core-animated-pages.html">
 <link rel="import" href="../../bower_components/core-animation/core-animation.html">
+<link rel="import" href="flow-data-provider-service.html">
 
 <polymer-element name="flow-grid" attributes="flowId">
 	<template>
@@ -20,21 +21,30 @@
 				border: 5px solid blue;
 			}
 		</style>
-		<polymer-grid-layout id="gridLayout"  layout="{{layout}}"></polymer-grid-layout>          
+		<polymer-grid-layout id="gridLayout" layout="{{layout}}"></polymer-grid-layout>
 		<heading>Heading One</heading>
 		<panel flex></panel>
 		<main>Main Content</main>
+        <flow-data-provider-service flowId="1111" interval="0"  data=""></flow-data-provider-service>
 	</template>
 	 <script>
-		Polymer('flow-grid', {
-			ready: function() {
-				this.layout=
-				[
-					[1, 1, 1],
-					[2, 2, 2],
-					[3, 3, 3]
-				];
-			}
-		})
+         (function () {
+
+             function triggerFlow(service) {
+                 service.trigger();
+             }
+
+             Polymer('flow-grid', {
+                 ready : function () {
+                     this.layout =
+                             [
+                                 [1, 1, 1],
+                                 [2, 2, 2],
+                                 [3, 3, 3]
+                             ];
+
+                 }
+             });
+         })();
 	 </script>
 </polymer-element>

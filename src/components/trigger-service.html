@@ -1,0 +1,31 @@
+<link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
+
+<polymer-element name="trigger-service" attributes="flowId">
+    <template>
+        <style>
+            :host {
+                display: none;
+            }
+        </style>
+
+        <core-ajax id="ajax"
+                   method="POST"
+                   contentType='application/json'
+                   url="./../../rest/v1/executions"
+                   body='{ "uuid" : "{{flowId}}", "inputs" : {} }'
+                   on-core-response="{{complete}}"
+                   handleAs="json">
+        </core-ajax>
+    </template>
+    <script>
+        Polymer('trigger-service', {
+            flowId    : null,
+            trigger   : function () {
+                this.$.ajax.go();
+            },
+            complete: function () {
+                this.fire('trigger-response', this.$.ajax.response);
+            }
+        });
+    </script>
+</polymer-element>

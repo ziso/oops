@@ -8,6 +8,7 @@ OOPS is an implementation for creating an end user portal over HP's Operation Or
 $ git clone https://github.com/ziso/oops.git
 $ cd oops
 $ npm install
+$ gulp bower
 ```
 
 ### Start the server (default port is 5000)
