@@ -61,9 +61,27 @@ gulp.task('html', function () {
     });
 });
 
+gulp.task('js', function () {
+    lr.changed({
+        body: {
+            files: ['./src/**']
+        }
+    });
+});
+
+gulp.task('serverjs', function () {
+    lr.changed({
+        body: {
+            files: ['./server/*.js']
+        }
+    });
+});
+
 gulp.task('watch', function () {
     gulp.watch(['./src/**'], ['html']);
     gulp.watch(['./server/mocks/*.json'], ['json']);
+	gulp.watch(['./src/**'], ['js']);
+	gulp.watch(['./server/**'], ['serverjs']);
 });
 
 // inline everything

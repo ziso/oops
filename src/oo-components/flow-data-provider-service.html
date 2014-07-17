@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
 <link rel="import" href="trigger-service.html">
+<link rel="import" href="execution-service.html">
 
 <polymer-element name="flow-data-provider-service" attributes="flowId interval data">
     <template>
@@ -9,19 +10,22 @@
             }
         </style>
         <trigger-service id="triggerService" flowId="{{flowId}}" on-trigger-response="{{handleTriggerResponse}}"></trigger-service>
+        <execution-service id="executionService" executionId="{{executionId}}" on-execution-response="{{handleExecutionResponse}}"></execution-service>
     </template>
     <script>
         Polymer('flow-data-provider-service', {
             flowId    : null,
             ready   : function () {
                 this.$.triggerService.trigger();
+                this.$.executionService.getCompletedExecution();
             },
             handleTriggerResponse: function (e) {
-                console.log("Trigger response is here!!!\n" +
-                        "Execution ID: " + e.detail.executionId + "\n" +
-                        "Feed URL: " + e.detail.feedUrl + "\n" +
-                        "Error code: " + e.detail.errorCode);
-                // todo - need to: 1. wait until flow ended 2. get the data and return it
+                console.log("Trigger response is here!!!\n" + JSON.stringify(e.detail) + "\n");
+                this.executionId = e.detail.executionId;
+            },
+            handleExecutionResponse: function (e) {
+                console.log("Execution response is here!!!\n" + JSON.stringify(e.detail));
+                this.data = e.detail.flowOutput.Result;
             }
         });
     </script>

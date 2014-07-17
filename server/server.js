@@ -1,6 +1,20 @@
 exports.listen = function (server) {
     server.get('/rest/v1/executions/:id/summary', function (req, res) {
-        res.sendfile('./server/mocks/execution.json');
+        var random = Math.floor((Math.random() * 10) + 1);
+        if (random === 10) {
+            res.sendfile('./server/mocks/execution-completed.json');
+        } else {
+            res.sendfile('./server/mocks/execution-not-completed.json');
+        }
+    });
+
+    server.get('/rest/v1/executions/:id/execution-log', function (req, res) {
+        var random = Math.floor((Math.random() * 10) + 1);
+        if (random === 10) {
+            res.sendfile('./server/mocks/execution-log-completed.json');
+        } else {
+            res.sendfile('./server/mocks/execution-log-not-completed.json');
+        }
     });
 
     server.post('/rest/v1/executions', function (req, res) {

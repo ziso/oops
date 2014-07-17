@@ -21,11 +21,10 @@
 				border: 5px solid blue;
 			}
 		</style>
+        <designer-element id="designer vartical layout"></designer-element>
 		<polymer-grid-layout id="gridLayout" layout="{{layout}}"></polymer-grid-layout>
-		<heading>Heading One</heading>
-		<panel flex></panel>
-		<main>Main Content</main>
-        <flow-data-provider-service flowId="1111" interval="0"  data=""></flow-data-provider-service>
+		<panel flex>{{data}}</panel>
+        <flow-data-provider-service flowId="1111" interval="0" data="{{data}}"></flow-data-provider-service>
 	</template>
 	 <script>
          (function () {
@@ -43,7 +42,8 @@
                                  [3, 3, 3]
                              ];
 
-                 }
+                 },
+                 data : null
              });
          })();
 	 </script>

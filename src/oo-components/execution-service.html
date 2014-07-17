@@ -1,0 +1,36 @@
+<link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
+
+<polymer-element name="execution-service" attributes="executionId">
+    <template>
+        <style>
+            :host {
+                display: none;
+            }
+        </style>
+
+        <core-ajax id="ajax"
+                   method="GET"
+                   contentType='application/json'
+                   url="./../../rest/v1/executions/{{executionId}}}}/execution-log"
+                   on-core-response="{{complete}}"
+                   handleAs="json">
+        </core-ajax>
+    </template>
+    <script>
+        Polymer('execution-service', {
+            executionId    : null,
+            getCompletedExecution   : function () {
+                this.$.ajax.go();
+            },
+            complete: function () {
+                var exeutionResponse = this.$.ajax.response;
+                if (exeutionResponse.executionSummary.status === "COMPLETED") {
+                    this.fire('execution-response', exeutionResponse);
+                } else {
+                    console.log("Execution ID " + exeutionResponse.executionSummary.executionId + " is still running...\n");
+                    this.getCompletedExecution();
+                }
+            }
+        });
+    </script>
+</polymer-element>

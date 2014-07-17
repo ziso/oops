@@ -19,12 +19,18 @@
         "tests"
     ],
     "dependencies" : {
-        "core-elements" : "Polymer/core-elements#~0.3.3",
-        "polymer" : "Polymer/polymer#~0.3.3",
-        "paper-elements" : "Polymer/paper-elements#~0.3.3",
-        "core-animation" : "Polymer/core-animation#~0.3.3",
-        "core-animated-pages" : "Polymer/core-animated-pages#~0.3.3",
-        "polymer-grid-layout" : "Polymer/polymer-grid-layout#~0.3.0",
-        "polymer-layout" : "Polymer/polymer-layout#~0.3.0"
+        "core-elements" : "Polymer/core-elements#master",
+        "polymer" : "Polymer/polymer#master",
+        "paper-elements" : "Polymer/paper-elements#master",
+        "core-animation" : "Polymer/core-animation#master",
+        "core-animated-pages" : "Polymer/core-animated-pages#master",
+        "polymer-grid-layout" : "Polymer/polymer-grid-layout#master",
+        "polymer-layout" : "Polymer/polymer-layout#master",
+		"platform": "Polymer/platform#master",
+		"code-mirror": "PolymerLabs/code-mirror#master",
+		"github-elements": "PolymerLabs/github-elements#master",
+		"x-meta": "PolymerLabs/x-meta#master",
+		"inspector-elements": "PolymerLabs/inspector-elements#master",
+		"more-elements": "Polymer/more-elements#master"
     }
 }

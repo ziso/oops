@@ -1,0 +1,21 @@
+{   "executionSummary":
+        {
+            "executionId"     : "107800081",
+            "branchId"        : null,
+            "startTime"       : 1404649857568,
+            "endTime"         : 1404649858157,
+            "status"          : "IN_PROGRESS",
+            "resultStatusType": "RESOLVED",
+            "resultStatusName": "success",
+            "pauseReason"     : null,
+            "owner"           : "anonymousUser",
+            "triggeredBy"     : "anonymousUser",
+            "flowUuid"        : "fb2ba428-d1e5-47c1-8551-bddb260e8d76",
+            "flowPath"        : "Library/Folder1/MyFlow.xml",
+            "executionName"   : "MyFlow",
+            "triggeringSource": "central",
+            "roi"             : 0.0
+        },
+    "flowVars"        : [],
+    "flowOutput"      : { "Result"   : "" }
+}
