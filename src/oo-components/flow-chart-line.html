@@ -1,0 +1,19 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/chartjs/elements/chart.html">
+<link rel="import" href="flow-data-provider-service.html">
+
+<polymer-element name="flow-chart-line" attributes="flowId">
+	<template>
+		<style>
+		</style>
+        <flow-data-provider-service flowId="{{flowId}}" interval="0" data="{{data}}"></flow-data-provider-service>
+        <chart-line></chart-line>
+	</template>
+	 <script>
+         Polymer('flow-chart-line', {
+             ready : function () {
+             },
+             data : null
+         });
+	 </script>
+</polymer-element>

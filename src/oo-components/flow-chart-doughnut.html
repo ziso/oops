@@ -1,0 +1,19 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/chartjs/elements/chart.html">
+<link rel="import" href="flow-data-provider-service.html">
+
+<polymer-element name="flow-chart-doughnut" attributes="flowId">
+	<template>
+		<style>
+		</style>
+        <flow-data-provider-service flowId="{{flowId}}" interval="0" data="{{data}}"></flow-data-provider-service>
+        <chart-doughnut values="[30, 50, 100, 40, 120]"></chart-doughnut>
+	</template>
+	 <script>
+         Polymer('flow-chart-doughnut', {
+             ready : function () {
+             },
+             data : null
+         });
+	 </script>
+</polymer-element>

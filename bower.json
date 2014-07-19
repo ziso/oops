@@ -31,6 +31,7 @@
 		"github-elements": "PolymerLabs/github-elements#master",
 		"x-meta": "PolymerLabs/x-meta#master",
 		"inspector-elements": "PolymerLabs/inspector-elements#master",
-		"more-elements": "Polymer/more-elements#master"
+		"more-elements": "Polymer/more-elements#master",
+        "chartjs": "robdodson/chart-js-polymer"
     }
 }
