@@ -1,0 +1,17 @@
+{
+  "name": "google-map",
+  "private": true,
+  "dependencies": {
+    "google-apis": "PolymerLabs/google-apis#master"
+  },
+  "homepage": "https://github.com/Polymer/google-map",
+  "_release": "1dc62baf46",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "1dc62baf46c68dffb8fd925da7a20a10485f1642"
+  },
+  "_source": "git://github.com/Polymer/google-map.git",
+  "_target": "master",
+  "_originalSource": "Polymer/google-map"
+}

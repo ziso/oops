@@ -19,6 +19,9 @@ function startExpress() {
 	server.use('/bower_components', express.static('./bower_components'));
 	server.use('/server', express.static('./server'));
 	server.use('/resources', express.static('./resources'));
+	server.use('/resources', express.static('./components'));
+	server.use('/resources', express.static('./elements'));
+	server.use('/resources', express.static('./assets'));
 	server.use(logger());
 	var oopsMockServer = require('./server/server');
 	oopsMockServer.listen(server);
