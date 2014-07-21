@@ -21,3 +21,4 @@ npm-debug.log
 # gulp
 dist
 lib
+!*/components/**/
