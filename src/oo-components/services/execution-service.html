@@ -1,4 +1,4 @@
-<link rel="import" href="../../../bower_components/core-ajax/core-ajax.html">
+<link rel="import" href="../services/ajax-service.html">
 
 <polymer-element name="execution-service" attributes="executionId">
     <template>
@@ -8,17 +8,18 @@
             }
         </style>
 
-        <core-ajax id="ajax"
+        <oo-ajax id="ajax"
                    method="GET"
                    contentType='application/json'
-                   url="./../../rest/v1/executions/{{executionId}}}}/execution-log"
+                   url="{{url}}"
                    on-core-response="{{complete}}"
                    handleAs="json">
-        </core-ajax>
+        </oo-ajax>
     </template>
     <script>
         Polymer('execution-service', {
             executionId    : null,
+            url : window.location.origin + "/rest/v1/executions/{{executionId}}}}/execution-log",
             getCompletedExecution   : function () {
                 this.$.ajax.go();
             },

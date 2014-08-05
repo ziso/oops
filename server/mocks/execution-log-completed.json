@@ -17,5 +17,5 @@
     "roi"             : 0.0
 },
     "flowVars"        : [],
-    "flowOutput"      : { "Result"   : "Flow result!" }
+    "flowOutput"      : { "Result"   : "[8, 9, 10, 50, 20, 100]" }
 }

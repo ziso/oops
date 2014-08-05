@@ -1,30 +1,18 @@
-<link rel="import" href="../../../bower_components/polymer-grid-layout/polymer-grid-layout.html">
-<link rel="import" href="../../../bower_components/polymer-layout/polymer-layout.html">
-<link rel="import" href="../../../bower_components/core-animated-pages/core-animated-pages.html">
-<link rel="import" href="../../../bower_components/core-animation/core-animation.html">
 <link rel="import" href="../services/flow-data-provider-service.html">
 
 <polymer-element name="flow-grid" attributes="flowId">
 	<template>
 		<style>
 		</style>
-        <designer-element id="designer vartical layout"></designer-element>
-		<polymer-grid-layout id="gridLayout" layout="{{layout}}"></polymer-grid-layout>
 		<panel>{{data}}</panel>
         <flow-data-provider-service flowId="{{flowId}}" interval="0" data="{{data}}"></flow-data-provider-service>
 	</template>
 	 <script>
          Polymer('flow-grid', {
              ready : function () {
-                 this.layout =
-                         [
-                             [1, 1, 1],
-                             [2, 2, 2],
-                             [3, 3, 3]
-                         ];
-
              },
-             data : null
+             data : null,
+             flowId : 1111
          });
 	 </script>
 </polymer-element>

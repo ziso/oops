@@ -1,4 +1,3 @@
-<link rel="import" href="../../../bower_components/core-ajax/core-ajax.html">
 <link rel="import" href="trigger-service.html">
 <link rel="import" href="execution-service.html">
 
@@ -17,15 +16,16 @@
             flowId    : null,
             ready   : function () {
                 this.$.triggerService.trigger();
-                this.$.executionService.getCompletedExecution();
             },
             handleTriggerResponse: function (e) {
                 console.log("Trigger response is here!!!\n" + JSON.stringify(e.detail) + "\n");
                 this.executionId = e.detail.executionId;
+                this.$.executionService.getCompletedExecution();
             },
             handleExecutionResponse: function (e) {
                 console.log("Execution response is here!!!\n" + JSON.stringify(e.detail));
                 this.data = e.detail.flowOutput.Result;
+                this.fire('done', this.data);
             }
         });
     </script>

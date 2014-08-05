@@ -5,14 +5,18 @@
 	<template>
 		<style>
 		</style>
-        <flow-data-provider-service flowId="{{flowId}}" interval="0" data="{{data}}"></flow-data-provider-service>
-        <chart-pie values="[20, 30, 100]"></chart-pie>
+        <flow-data-provider-service flowId="{{flowId}}" interval="0" data="{{data}}" on-done="{{dataLoaded}}"></flow-data-provider-service>
+        <chart-pie values="{{data}}"></chart-pie>
 	</template>
 	 <script>
          Polymer('flow-chart-pie', {
              ready : function () {
              },
-             data : null
+             data : [20, 30, 100],
+             flowId : 1111,
+             dataLoaded: function (e) {
+                 this.values = e.detail;
+             }
          });
 	 </script>
 </polymer-element>

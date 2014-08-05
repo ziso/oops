@@ -1,4 +1,4 @@
-<link rel="import" href="../../../bower_components/core-ajax/core-ajax.html">
+<link rel="import" href="../services/ajax-service.html">
 
 <polymer-element name="trigger-service" attributes="flowId">
     <template>
@@ -8,18 +8,19 @@
             }
         </style>
 
-        <core-ajax id="ajax"
+        <oo-ajax id="ajax"
                    method="POST"
                    contentType='application/json'
-                   url="./../../rest/v1/executions"
+                   url="{{url}}"
                    body='{ "uuid" : "{{flowId}}", "inputs" : {} }'
                    on-core-response="{{complete}}"
                    handleAs="json">
-        </core-ajax>
+        </oo-ajax>
     </template>
     <script>
         Polymer('trigger-service', {
             flowId    : null,
+            url : window.location.origin + "/rest/v1/executions",
             trigger   : function () {
                 this.$.ajax.go();
             },
